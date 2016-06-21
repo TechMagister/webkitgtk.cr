@@ -1,6 +1,8 @@
 # webkitgtk
 
-TODO: Write a description here
+WebKitGtk binding for the Crystal language.
+
+** Not for production use **
 
 ## Installation
 
@@ -10,27 +12,36 @@ Add this to your application's `shard.yml`:
 ```yaml
 dependencies:
   webkitgtk:
-    github: [your-github-name]/webkitgtk
+    github: TechMagister/webkitgtk.cr
 ```
-
 
 ## Usage
 
+See samples folder.
 
 ```crystal
-require "webkitgtk"
+require "webkitgtk/webkitgtk"
+
+require "gobject/gtk"
+
+window = Gtk::Window.new
+window.title = "Hello World!"
+window.connect "destroy", &->Gtk.main_quit
+window.border_width = 10
+window.resize(800,600)
+
+view = WebKitGTK::WebKitWebView.new
+view.load_uri "http://www.google.fr"
+
+window.add(view)
+
+window.show_all
 ```
 
 
-TODO: Write usage instructions here
-
-## Development
-
-TODO: Write development instructions here
-
 ## Contributing
 
-1. Fork it ( https://github.com/[your-github-name]/webkitgtk/fork )
+1. Fork it ( https://github.com/TechMagister/webkitgtk.cr/fork )
 2. Create your feature branch (git checkout -b my-new-feature)
 3. Commit your changes (git commit -am 'Add some feature')
 4. Push to the branch (git push origin my-new-feature)
@@ -38,4 +49,4 @@ TODO: Write development instructions here
 
 ## Contributors
 
-- [[your-github-name]](https://github.com/[your-github-name])  - creator, maintainer
+- [TechMagister](https://github.com/TechMagister)  - creator, maintainer
