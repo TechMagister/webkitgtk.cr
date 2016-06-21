@@ -1,4 +1,4 @@
-require "../src/webkitgtk/*"
+require "../src/webkitgtk"
 
 require "gobject/gtk"
 
