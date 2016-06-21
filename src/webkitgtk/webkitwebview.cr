@@ -1,10 +1,10 @@
-require "./webkitgtk/*"
+require "../lib_webkitgtk"
 
 require "gobject/gtk"
 
 module WebKitGTK
 
-    class WebKitWebView < Gtk::Widget
+    class WebView < Gtk::Widget
         @webkit_webview : LibWebKitGTK::WebKitWebView*?
         def initialize(@webkit_webview : LibWebKitGTK::WebKitWebView*)
         end

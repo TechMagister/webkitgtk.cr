@@ -16,6 +16,8 @@ lib LibWebKitGTK
     priv : WebKitWebViewPrivate*
   end
 
+  alias WebView = WebKitWebView
+
   fun webkit_web_view_new() : LibGtk::Widget*
 
   fun webkit_web_view_load_uri(view : WebKitWebView*, uri : UInt8*) : Void
