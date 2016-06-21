@@ -6,7 +6,7 @@ window = Gtk::Window.new
 window.title = "Hello World!"
 window.connect "destroy", &->Gtk.main_quit
 window.border_width = 10
-window.resize(800,600)
+window.resize(800, 600)
 
 view = WebKitGTK::WebView.new
 view.load_uri "http://www.google.fr"
